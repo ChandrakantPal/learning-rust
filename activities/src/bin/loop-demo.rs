@@ -7,4 +7,5 @@ fn main() {
             break;
         }
     }
+    println!("done!");
 }
