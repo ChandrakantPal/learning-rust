@@ -9,6 +9,6 @@ fn main() {
         price: 2.99,
     };
 
-    println!("stock: {:?}",cereal.stock)
-    println!("price: {:?}",cereal.price)
+    println!("stock: {:?}", cereal.stock);
+    println!("price: {:?}", cereal.price);
 }
