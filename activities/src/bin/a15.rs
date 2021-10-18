@@ -22,4 +22,16 @@ fn main() {
         Ticket::Standard(15.0),
         Ticket::Vip(30.0, "Amy".to_owned()),
     ];
+
+    for ticket in tickets {
+        match ticket {
+            Ticket::Backstage(price, holder) => {
+                println!("Backstage ticket Holder: {:?}, price: {:?}", holder, price)
+            }
+            Ticket::Standard(price) => println!("Standard ticketm price: {:?}", price),
+            Ticket::Vip(price, holder) => {
+                println!("VIP ticket Holder: {:?}, price: {:?}", holder, price)
+            }
+        }
+    }
 }
