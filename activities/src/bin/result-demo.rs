@@ -14,7 +14,14 @@ fn get_choice(input: &str) -> Result<MenuChoice, String> {
     }
 }
 
-fn main() {
-    let choice = get_choice("mainmenu");
+fn print_choice(choice: &MenuChoice) {
     println!("choice = {:?}", choice);
+}
+
+fn main() {
+    let choice: Result<MenuChoice, _> = get_choice("mainmenu");
+    match choice {
+        Ok(inner_choice) => print_choice(&inner_choice),
+        Err(e) => println!("error = {:?}", e),
+    }
 }
