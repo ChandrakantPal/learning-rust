@@ -55,4 +55,20 @@ fn try_access(employee: &Employee) -> Result<(), String> {
     }
 }
 
-fn main() {}
+fn print_access(employee: &Employee) -> Result<(), String> {
+    let attempt_access = try_access(employee)?;
+    println!("access ok");
+    Ok(())
+}
+
+fn main() {
+    let manager = Employee {
+        position: Position::Manager,
+        status: Status::Active,
+    };
+
+    match print_access(&manager) {
+        Err(e) => println!("acess denided {:?}", e),
+        _ => (),
+    }
+}
