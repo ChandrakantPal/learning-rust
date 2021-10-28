@@ -3,4 +3,5 @@ fn main() {
     let a_is_some = a.is_some();
     let a_is_none = a.is_none();
     let a_mapped = a.map(|num| num + 1);
+    let a_filtered = a.filter(|num| num == &1); // & since it's browed
 }
