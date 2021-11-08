@@ -6,7 +6,11 @@ fn main() {
     //     plus_one.push(num + 1);
     // }
 
-    let plus_one: Vec<_> = numbers.iter().map(|num| num + 1).collect();
+    let plus_one: Vec<_> = numbers
+        .iter()
+        .map(|num| num + 1)
+        .filter(|num| num < 1)
+        .collect();
 
     let new_numbers: Vec<_> = numbers.iter().filter(|num| num <= 3).collect();
 
@@ -22,5 +26,5 @@ fn main() {
 
     let max: Option<i32> = numbers.iter().max();
 
-    let take: Vec<i32> = numbers.iter().take(3).collect();
+    let take: Vec<i32> = numbers.iter().take(3).collect(); //first 3 elem of vec
 }
