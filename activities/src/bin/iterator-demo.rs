@@ -12,4 +12,6 @@ fn main() {
 
     let numbers = vec![1, 2, 3, 4, 5];
     let find_me: Option<i32> = numbers.iter().find(|num| num == 3);
+
+    let count = numbers.iter().count();
 }
