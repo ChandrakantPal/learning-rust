@@ -16,4 +16,11 @@ fn main() {
     let count = numbers.iter().count();
 
     let last: Option<i32> = numbers.iter().last();
+
+    let numbers = vec![1, 2, 3, 4, 5];
+    let min: Option<i32> = numbers.iter().min();
+
+    let max: Option<i32> = numbers.iter().max();
+
+    let take: Vec<i32> = numbers.iter().take(3).collect();
 }
