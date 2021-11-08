@@ -14,4 +14,6 @@ fn main() {
     let find_me: Option<i32> = numbers.iter().find(|num| num == 3);
 
     let count = numbers.iter().count();
+
+    let last: Option<i32> = numbers.iter().last();
 }
