@@ -15,7 +15,8 @@
 // * After moving the functions into modules, try running
 //   `cargo check --bin a26b` to get a listing of required code changes
 
-mod msg{}
+mod msg {}
+mod math {}
 
 fn trim(msg: &str) -> &str {
     msg.trim()
