@@ -34,4 +34,13 @@ fn concat(first: &str, second: &str) -> String {
 fn main() {}
 
 #[cfg(test)]
-mod test {}
+mod test {
+    use crate::*;
+
+    #[test]
+    fn clamp_lower() {
+        let result = clamp(10, 100, 100);
+        let expected = 100;
+        assert_eq!(result, expected, "should be 100");
+    }
+}
