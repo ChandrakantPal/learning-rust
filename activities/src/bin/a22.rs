@@ -28,7 +28,7 @@ fn div(a: i32, b: i32) -> Option<i32> {
 
 /// Takes two strings and places them immediately one after another.
 fn concat(first: &str, second: &str) -> String {
-    format!("{} {}", first, second)
+    format!("{}{}", first, second)
 }
 
 fn main() {}
