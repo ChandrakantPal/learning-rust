@@ -39,8 +39,15 @@ mod test {
 
     #[test]
     fn clamp_lower() {
-        let result = clamp(10, 100, 100);
+        let result = clamp(10, 100, 1000);
         let expected = 100;
         assert_eq!(result, expected, "should be 100");
+    }
+
+    #[test]
+    fn clamp_upper() {
+        let result = clamp(5000, 100, 1000);
+        let expected = 1000;
+        assert_eq!(result, expected, "should be 1000");
     }
 }
