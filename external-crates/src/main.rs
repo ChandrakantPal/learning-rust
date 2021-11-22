@@ -1,3 +1,7 @@
+use humantime::format_duration;
+use std::time::Duration;
+
 fn main() {
-    println!("Hello, world!");
+    let d = Duration::from_secs(9876);
+    println!("{}", format_duration(d));
 }
