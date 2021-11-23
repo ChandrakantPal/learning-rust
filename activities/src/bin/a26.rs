@@ -9,4 +9,7 @@
 //   for examples on how to create custom time formats
 use chrono::prelude::*;
 
-fn main() {}
+fn main() {
+    let local: DateTime<Local> = Local::now();
+    println!("{:?}", local);
+}
