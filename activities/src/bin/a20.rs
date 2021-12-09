@@ -31,4 +31,18 @@ enum PowerState {
     Hibernate,
 }
 
+impl PowerState {
+    fn new(state: &str) -> Option<PowerState> {
+        let state = state.trim().to_lowercase();
+        match state {
+            "off" => Some(PowerState::Off),
+            " sleep" => Some(PowerState::Sleep),
+            " reboot" => Some(PowerState::Reboot),
+            " shutdown" => Some(PowerState::Shutdown),
+            " hibernate" => Some(PowerState::Hibernate),
+            _ => None,
+        }
+    }
+}
+
 fn main() {}
