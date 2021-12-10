@@ -36,12 +36,23 @@ impl PowerState {
         let state = state.trim().to_lowercase();
         match state {
             "off" => Some(PowerState::Off),
-            " sleep" => Some(PowerState::Sleep),
-            " reboot" => Some(PowerState::Reboot),
-            " shutdown" => Some(PowerState::Shutdown),
-            " hibernate" => Some(PowerState::Hibernate),
+            "sleep" => Some(PowerState::Sleep),
+            "reboot" => Some(PowerState::Reboot),
+            "shutdown" => Some(PowerState::Shutdown),
+            "hibernate" => Some(PowerState::Hibernate),
             _ => None,
         }
+    }
+}
+
+fn print_power_action(state: PowerState) {
+    use PowerState::*;
+    match state {
+        Off => println!("turning off"),
+        Sleep => println!("sleeping"),
+        Reboot => println!("rebooting"),
+        Shutdown => println!("shutting down"),
+        Hibernate => println!("hibernating"),
     }
 }
 
