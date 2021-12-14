@@ -43,4 +43,16 @@ fn get_input() -> Option<String> {
     }
 }
 
-fn main() {}
+enum MainMenu {
+    AddBill,
+    ViewBill,
+}
+
+fn main() {
+    // Create bill structure
+
+    loop {
+        // Display the menu
+        // Make a choice, based on input
+    }
+}
