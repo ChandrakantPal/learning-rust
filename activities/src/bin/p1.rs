@@ -1,4 +1,4 @@
-// Project 1: Interactive bill manager
+// Project 1: Interactive
 //
 // Summary:
 //   Create a command line bills/expenses manager that runs
@@ -46,6 +46,24 @@ fn get_input() -> Option<String> {
 enum MainMenu {
     AddBill,
     ViewBill,
+}
+
+impl MainMenu {
+    fn from_str(input: &str) -> Option<MainMenu> {
+        match input {
+            "1" => Some(Self::AddBill),
+            "2" => Some(Self::ViewBill),
+            _ => None,
+        }
+    }
+    fn show() {
+        println!("");
+        println!("== Bill Manager ==");
+        println!("1. Add Bill");
+        println!("2. View Bills");
+        println!("");
+        println!("Enter selection: ");
+    }
 }
 
 fn main() {
