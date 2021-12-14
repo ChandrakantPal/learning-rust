@@ -36,7 +36,7 @@ fn get_input() -> Option<String> {
         println!("Please enter your data again");
     }
     let input = buffer.trim().to_owned();
-    if &input = "" {
+    if &input == "" {
         None
     } else {
         Some(input)
@@ -71,6 +71,13 @@ fn main() {
 
     loop {
         // Display the menu
+        MainMenu::show();
+        let input = get_input().expect("no data entered");
+        match MainMenu::from_str(input.as_str()) {
+            Some(MainMenu::AddBill) => (),
+            Some(MainMenu::ViewBill) => (),
+            None => return,
+        }
         // Make a choice, based on input
     }
 }
