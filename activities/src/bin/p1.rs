@@ -48,6 +48,10 @@ impl Bills {
     fn add(&mut self, bill: Bill) {
         self.inner.push(bill);
     }
+
+    fn get_all(&self) -> Vec<&Bill> {
+        self.inner.iter().collect();
+    }
 }
 
 fn get_input() -> Option<String> {
