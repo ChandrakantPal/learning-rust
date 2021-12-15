@@ -30,6 +30,11 @@
 //   hashmap will be easier to work with at stages 2 and 3.
 use std::io;
 
+pub struct Bill {
+    name: String,
+    amount: f64,
+}
+
 fn get_input() -> Option<String> {
     let mut buffer = String::new();
     while io::stdin().read_line(&mut buffer).is_err() {
