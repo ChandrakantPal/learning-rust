@@ -30,9 +30,14 @@
 //   hashmap will be easier to work with at stages 2 and 3.
 use std::io;
 
+#[derive(Debug, Clone)]
 pub struct Bill {
     name: String,
     amount: f64,
+}
+
+pub struct Bills {
+    inner: Vec<Bill>,
 }
 
 fn get_input() -> Option<String> {
