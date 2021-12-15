@@ -50,7 +50,7 @@ impl Bills {
     }
 
     fn get_all(&self) -> Vec<&Bill> {
-        self.inner.iter().collect();
+        self.inner.iter().collect()
     }
 }
 
