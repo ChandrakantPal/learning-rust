@@ -101,6 +101,12 @@ mod menu {
         bills.add(bill);
         println!("Bill added");
     }
+
+    pub fn view_bills(bills: &Bills) {
+        for bill in bills.get_all() {
+            println!("{:?}", bill);
+        }
+    }
 }
 
 enum MainMenu {
