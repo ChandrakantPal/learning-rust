@@ -74,6 +74,10 @@ mod menu {
             Some(input) => input,
             None => return,
         };
+        let amount = match get_input() {
+            Some(amount) => amount,
+            None => return,
+        };
     }
 }
 
