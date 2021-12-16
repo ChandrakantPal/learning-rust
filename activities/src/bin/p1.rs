@@ -67,17 +67,39 @@ fn get_input() -> Option<String> {
     }
 }
 
+fn get_bill_amount() -> Option<f64> {
+    println!("Amount:");
+    loop {
+        let input = match get_input() {
+            Some(input) => input,
+            None => return None,
+        };
+        if &input == "" {
+            return None;
+        }
+        let parsed_input: Result<f64, _> = input.parse();
+        match parsed_input {
+            Ok(amount) => return Some(amount),
+            Err(_) => println!("Please enter a number"),
+        }
+    }
+}
+
 mod menu {
+    use crate::{get_bill_amount, get_input, Bill, Bills};
     pub fn add_bill(bills: &mut Bills) {
         println!("Bill name:");
         let name = match get_input() {
             Some(input) => input,
             None => return,
         };
-        let amount = match get_input() {
+        let amount = match get_bill_amount() {
             Some(amount) => amount,
             None => return,
         };
+        let bill = Bill { name, amount };
+        bills.add(bill);
+        println!("Bill added");
     }
 }
 
