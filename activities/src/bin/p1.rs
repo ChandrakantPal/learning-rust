@@ -67,6 +67,16 @@ fn get_input() -> Option<String> {
     }
 }
 
+mod menu {
+    pub fn add_bill(bills: &mut Bills) {
+        println!("Bill name:");
+        let name = match get_input() {
+            Some(input) => input,
+            None => return,
+        };
+    }
+}
+
 enum MainMenu {
     AddBill,
     ViewBill,
