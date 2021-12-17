@@ -55,6 +55,10 @@ impl Bills {
     fn get_all(&self) -> Vec<&Bill> {
         self.inner.values().collect()
     }
+
+    fn remove(&mut self, name: &str) -> bool {
+        self.inner.remove(name).is_some()
+    }
 }
 
 fn get_input() -> Option<String> {
