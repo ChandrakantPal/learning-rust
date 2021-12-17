@@ -137,6 +137,7 @@ mod menu {
 enum MainMenu {
     AddBill,
     ViewBill,
+    RemoveBill,
 }
 
 impl MainMenu {
@@ -168,6 +169,7 @@ fn main() {
         match MainMenu::from_str(input.as_str()) {
             Some(MainMenu::AddBill) => menu::add_bill(&mut bills),
             Some(MainMenu::ViewBill) => menu::view_bills(&bills),
+            Some(MainMenu::RemoveBill) => menu::remove_bill(&mut bills),
             None => return,
         }
         // Make a choice, based on input
