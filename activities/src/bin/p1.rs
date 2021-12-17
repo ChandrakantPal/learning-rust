@@ -145,6 +145,7 @@ impl MainMenu {
         match input {
             "1" => Some(Self::AddBill),
             "2" => Some(Self::ViewBill),
+            "3" => Some(Self::RemoveBill),
             _ => None,
         }
     }
@@ -153,6 +154,7 @@ impl MainMenu {
         println!("== Bill Manager ==");
         println!("1. Add Bill");
         println!("2. View Bills");
+        println!("3. Remove Bill");
         println!("");
         println!("Enter selection: ");
     }
