@@ -137,6 +137,28 @@ mod menu {
         }
     }
 
+    pub fn update_bill(bills: &mut Bills) {
+        for bill in bills.get_all() {
+            println!("{:?}", bill);
+        }
+        println!("Enter bill to update:");
+        let name = match get_input() {
+            Some(name) => name,
+            None => return,
+        };
+
+        let amount = match get_bill_amount() {
+            Some(amount) => amount,
+            None => return,
+        };
+
+        if bills.update(&name, amount) {
+            println!("updated");
+        } else {
+            println!("bill not found");
+        }
+    }
+
     pub fn view_bills(bills: &Bills) {
         for bill in bills.get_all() {
             println!("{:?}", bill);
