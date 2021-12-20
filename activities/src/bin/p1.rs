@@ -59,6 +59,16 @@ impl Bills {
     fn remove(&mut self, name: &str) -> bool {
         self.inner.remove(name).is_some()
     }
+
+    fn update(&mut self, name: &str, amount: f64) -> bool {
+        match self.inner.get_mut(name) {
+            Some(bill) => {
+                bill.amount = amount;
+                true
+            }
+            None => false,
+        }
+    }
 }
 
 fn get_input() -> Option<String> {
