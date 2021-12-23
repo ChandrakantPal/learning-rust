@@ -20,4 +20,7 @@ fn fall(thing: impl Fall) {
     thing.hit_ground();
 }
 
-fn main() {}
+fn main() {
+    fall(Vase {});
+    fall(Cat {});
+}
