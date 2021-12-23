@@ -9,4 +9,11 @@ impl Fall for Vase {
     }
 }
 
+struct Cat;
+impl Fall for Cat {
+    fn hit_ground(&self) {
+        println!("the cat casually walked away")
+    }
+}
+
 fn main() {}
