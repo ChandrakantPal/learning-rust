@@ -16,4 +16,8 @@ impl Fall for Cat {
     }
 }
 
+fn fall(thing: impl Fall) {
+    thing.hit_ground();
+}
+
 fn main() {}
