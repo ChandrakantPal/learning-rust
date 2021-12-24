@@ -16,4 +16,8 @@ trait Perimeter {
     fn calculate_perimeter(&self) -> i32;
 }
 
+struct Square {
+    side: i32,
+}
+
 fn main() {}
