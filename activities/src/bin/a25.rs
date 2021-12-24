@@ -20,4 +20,10 @@ struct Square {
     side: i32,
 }
 
+struct Triangle {
+    side_a: i32,
+    side_b: i32,
+    side_c: i32,
+}
+
 fn main() {}
