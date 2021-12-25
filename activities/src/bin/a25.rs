@@ -20,6 +20,12 @@ struct Square {
     side: i32,
 }
 
+impl Perimeter for Square {
+    fn calculate_perimeter(&self) -> i32 {
+        self.side * 4
+    }
+}
+
 struct Triangle {
     side_a: i32,
     side_b: i32,
