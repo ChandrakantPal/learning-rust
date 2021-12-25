@@ -26,4 +26,9 @@ struct Triangle {
     side_c: i32,
 }
 
+fn print_perimeter(shape: impl Perimeter) {
+    let perimeter = shape.calculate_perimeter();
+    println!("perimeter = {:?}", perimeter);
+}
+
 fn main() {}
