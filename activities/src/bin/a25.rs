@@ -43,4 +43,13 @@ fn print_perimeter(shape: impl Perimeter) {
     println!("perimeter = {:?}", perimeter);
 }
 
-fn main() {}
+fn main() {
+    let square = Square { side: 5 };
+    let triangle = Triangle {
+        side_a: 2,
+        side_b: 3,
+        side_c: 4,
+    };
+    print_perimeter(square);
+    print_perimeter(triangle);
+}
