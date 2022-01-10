@@ -33,4 +33,9 @@ impl CheckIn for Cargo {
     }
 }
 
+fn process_item<T: CheckIn>(item: T) {
+    item.check_in();
+    item.process();
+}
+
 fn main() {}
