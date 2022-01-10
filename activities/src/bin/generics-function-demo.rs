@@ -38,4 +38,13 @@ fn process_item<T: CheckIn>(item: T) {
     item.process();
 }
 
-fn main() {}
+fn main() {
+    let paul = Passenger;
+    let kathy = Pilot;
+    let cargo1 = Cargo;
+    let cargo2 = Cargo;
+    process_item(paul);
+    process_item(kathy);
+    process_item(cargo1);
+    process_item(cargo2);
+}
