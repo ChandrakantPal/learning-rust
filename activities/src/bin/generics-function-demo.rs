@@ -23,4 +23,14 @@ impl CheckIn for Passenger {
     }
 }
 
+struct Cargo;
+impl CheckIn for Cargo {
+    fn check_in(&self) {
+        println!("cargo checked in");
+    }
+    fn process(&self) {
+        println!("cargo moved to storage");
+    }
+}
+
 fn main() {}
