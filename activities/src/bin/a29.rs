@@ -39,4 +39,7 @@ fn print_guest_priority<T: Priority>(guest: T) {
     println!("{:?} is {:?} priority", guest, guest.get_priority());
 }
 
-fn main() {}
+fn main() {
+    let guest = Guest;
+    let vip = ImportantGuest;
+}
