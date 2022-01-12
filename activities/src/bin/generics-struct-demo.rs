@@ -9,4 +9,8 @@ trait Convey {
     fn dimensions(&self) -> Dimensions;
 }
 
+struct ConveyorBelt<T: Convey> {
+    pub items: Vec<T>,
+}
+
 fn main() {}
