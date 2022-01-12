@@ -52,4 +52,7 @@ impl Convey for CarPart {
     }
 }
 
-fn main() {}
+fn main() {
+    let mut belt: ConveyorBelt<CarPart> = ConveyorBelt { items: vec![] };
+    belt.add(CarPart::default());
+}
