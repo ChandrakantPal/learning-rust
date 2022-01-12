@@ -13,4 +13,10 @@ struct ConveyorBelt<T: Convey> {
     pub items: Vec<T>,
 }
 
+impl<T: Convey> ConveyorBelt<T> {
+    pub fn add(&mut self, item: T) {
+        self.items.push(item);
+    }
+}
+
 fn main() {}
