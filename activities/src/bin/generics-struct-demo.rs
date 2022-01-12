@@ -19,4 +19,12 @@ impl<T: Convey> ConveyorBelt<T> {
     }
 }
 
+struct CarPart {
+    width: f64,
+    height: f64,
+    depth: f64,
+    weight: f64,
+    part_number: String,
+}
+
 fn main() {}
