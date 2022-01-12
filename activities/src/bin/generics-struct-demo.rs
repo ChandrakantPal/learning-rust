@@ -27,4 +27,16 @@ struct CarPart {
     part_number: String,
 }
 
+impl Default for CarPart {
+    fn default() -> Self {
+        Self {
+            width: 5.0,
+            height: 1.0,
+            depth: 2.0,
+            weight: 3.0,
+            part_number: "abc".to_owned(),
+        }
+    }
+}
+
 fn main() {}
