@@ -4,11 +4,6 @@ struct Dimensions {
     depth: f64,
 }
 
-trait Convey {
-    fn weight(&self) -> f64;
-    fn dimensions(&self) -> Dimensions;
-}
-
 struct ConveyorBelt<T: Convey> {
     pub items: Vec<T>,
 }
@@ -35,6 +30,24 @@ impl Default for CarPart {
             depth: 2.0,
             weight: 3.0,
             part_number: "abc".to_owned(),
+        }
+    }
+}
+
+trait Convey {
+    fn weight(&self) -> f64;
+    fn dimensions(&self) -> Dimensions;
+}
+
+impl Convey for CarPart {
+    fn weight(&self) -> f64 {
+        self.weight
+    }
+    fn dimensions(&self) -> Dimensions {
+        Dimensions {
+            width: self.weight,
+            height: self.height,
+            depth: self.depth,
         }
     }
 }
