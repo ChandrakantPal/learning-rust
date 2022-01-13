@@ -23,4 +23,10 @@ struct Vehicle<B: Body, C: Color> {
     color: C,
 }
 
+impl<B: Body, C: Color> Vehicle<B, C> {
+    pub fn new(body: B, color: C) -> Self {
+        Self { body, color }
+    }
+}
+
 fn main() {}
