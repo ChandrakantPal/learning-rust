@@ -34,4 +34,9 @@ impl Body for Car {}
 struct Truck;
 impl Body for Truck {}
 
+struct Red;
+impl Color for Red {}
+struct Blue;
+impl Color for Blue {}
+
 fn main() {}
