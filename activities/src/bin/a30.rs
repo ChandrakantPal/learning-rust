@@ -29,4 +29,9 @@ impl<B: Body, C: Color> Vehicle<B, C> {
     }
 }
 
+struct Car;
+impl Body for Car {}
+struct Truck;
+impl Body for Truck {}
+
 fn main() {}
