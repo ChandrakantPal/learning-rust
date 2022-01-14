@@ -23,4 +23,8 @@ impl Sale for TenPercentOffPromo {
     }
 }
 
+fn calculate_revenue(sales: &Vec<Box<dyn Sale>>) -> f64 {
+    sales.iter().map(|sale| sale.amount()).sum()
+}
+
 fn main() {}
