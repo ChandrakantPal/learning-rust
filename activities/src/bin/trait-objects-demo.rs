@@ -9,4 +9,11 @@ impl Sale for FullSale {
     }
 }
 
+struct OneDollarOffCoupon(f64);
+impl Sale for OneDollarOffCoupon {
+    fn amount(&self) -> f64 {
+        self.0 - 1.0
+    }
+}
+
 fn main() {}
