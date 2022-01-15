@@ -22,6 +22,9 @@
 trait Material {
     fn cost_per_sq_meter(&self) -> f64;
     fn square_meters(&self) -> f64;
+    fn total_cost(&self) -> f64 {
+        self.cost_per_sq_meter() * self.square_meters()
+    }
 }
 
 fn main() {}
