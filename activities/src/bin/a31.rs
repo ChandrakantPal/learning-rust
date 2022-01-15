@@ -27,4 +27,8 @@ trait Material {
     }
 }
 
+struct Carpet(f64);
+struct Tile(f64);
+struct Wood(f64);
+
 fn main() {}
