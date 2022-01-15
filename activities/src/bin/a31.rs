@@ -46,6 +46,14 @@ impl Material for Tile {
     }
 }
 struct Wood(f64);
+impl Material for Wood {
+    fn cost_per_sq_meter(&self) -> f64 {
+        20.0
+    }
+    fn square_meters(&self) -> f64 {
+        self.0
+    }
+}
 
 fn total_cost(material: &Vec<Box<dyn Material>>) -> f64 {
     material.iter().map(|mat| mat.total_cost()).sum()
