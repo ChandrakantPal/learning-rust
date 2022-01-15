@@ -37,6 +37,14 @@ impl Material for Carpet {
     }
 }
 struct Tile(f64);
+impl Material for Tile {
+    fn cost_per_sq_meter(&self) -> f64 {
+        15.0
+    }
+    fn square_meters(&self) -> f64 {
+        self.0
+    }
+}
 struct Wood(f64);
 
 fn total_cost(material: &Vec<Box<dyn Material>>) -> f64 {
