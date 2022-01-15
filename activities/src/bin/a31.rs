@@ -31,4 +31,8 @@ struct Carpet(f64);
 struct Tile(f64);
 struct Wood(f64);
 
+fn total_cost(material: &Vec<Box<dyn Material>>) -> f64 {
+    material.iter().map(|mat| mat.total_cost()).sum()
+}
+
 fn main() {}
