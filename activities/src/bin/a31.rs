@@ -28,6 +28,14 @@ trait Material {
 }
 
 struct Carpet(f64);
+impl Material for Carpet {
+    fn cost_per_sq_meter(&self) -> f64 {
+        10.0
+    }
+    fn square_meters(&self) -> f64 {
+        self.0
+    }
+}
 struct Tile(f64);
 struct Wood(f64);
 
