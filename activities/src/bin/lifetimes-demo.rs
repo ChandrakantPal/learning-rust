@@ -16,3 +16,13 @@ struct IdCard {
     age: u8,
     city: City,
 }
+
+impl IdCard {
+    pub fn new(name: &str, age: u8, city: City) -> Self {
+        Self {
+            name: name.to_string(),
+            age,
+            city,
+        }
+    }
+}
