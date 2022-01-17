@@ -26,3 +26,15 @@ impl IdCard {
         }
     }
 }
+
+fn new_ids() -> Cards {
+    Cards {
+        inner: vec![
+            IdCard::new("Amy", 1, City::Fooville),
+            IdCard::new("Matt", 10, City::Barland),
+            IdCard::new("Bailee", 20, City::Barland,
+            IdCard::new("Anthony", 30, City::Bazopolis),
+            IdCard::new("Tina", 40, City::Bazopolis),
+        ]
+    }
+}
