@@ -44,6 +44,19 @@ struct YoungPeople<'a> {
     inner: Vec<&'a IdCard>,
 }
 
+impl<'a> YoungPeople<'a> {
+    fn living_in_fooville(&self) -> Self {
+        Self {
+            inner: self
+                .inner
+                .iter()
+                .filter(|id| id.city == City::Fooville)
+                .map(|id| *id)
+                .collect(),
+        }
+    }
+}
+
 fn main() {
     let ids = new_ids();
     let young = YoungPeople {
@@ -57,6 +70,11 @@ fn main() {
 
     println!("\nyoung");
     for id in young.inner.iter() {
+        println!("{:?}", id);
+    }
+
+    println!("\nliving in fooville");
+    for id in young.living_in_fooville().inner.iter() {
         println!("{:?}", id);
     }
 }
