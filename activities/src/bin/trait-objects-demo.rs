@@ -27,4 +27,13 @@ fn calculate_revenue(sales: &Vec<Box<dyn Sale>>) -> f64 {
     sales.iter().map(|sale| sale.amount()).sum()
 }
 
-fn main() {}
+fn main() {
+    let price = 20.0;
+    let regular = Box::new(FullSale(price));
+    let coupon = Box::new(OneDollarOffCoupon(price));
+    let promo = Box::new(TenPercentOffPromo(price));
+
+    let sales: Vec<Box<dyn Sale>> = vec![regular, coupon, promo];
+    let revenue = calculate_revenue(&sales);
+    println!("total revenue = {}", revenue);
+}
