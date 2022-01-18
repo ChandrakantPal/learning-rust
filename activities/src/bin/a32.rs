@@ -19,7 +19,8 @@ fn main() {
         .filter_map(|line| line.split(',').nth(1))
         .collect();
 
-    for n in names.iter().take(3) {
-        println!("{}", n);
-    }
+    let titles: Vec<_> = data
+        .iter()
+        .filter_map(|line| line.split(',').nth(4))
+        .collect();
 }
