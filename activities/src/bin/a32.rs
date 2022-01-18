@@ -35,4 +35,8 @@ fn main() {
     let titles = Titles { inner: titles };
 
     let data = names.inner.iter().zip(titles.inner.iter());
+
+    for (name, title) in data {
+        println!("Name: {}, title: {}", name, title);
+    }
 }
