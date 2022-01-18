@@ -12,6 +12,14 @@
 
 const MOCK_DATA: &'static str = include_str!("mock-data.csv");
 
+struct Names<'a> {
+    inner: Vec<&'a str>,
+}
+
+struct Titles<'a> {
+    inner: Vec<&'a str>,
+}
+
 fn main() {
     let data: Vec<_> = MOCK_DATA.split('\n').skip(1).collect();
     let names: Vec<_> = data
