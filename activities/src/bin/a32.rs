@@ -26,9 +26,13 @@ fn main() {
         .iter()
         .filter_map(|line| line.split(',').nth(1))
         .collect();
+    let names = Names { inner: names };
 
     let titles: Vec<_> = data
         .iter()
         .filter_map(|line| line.split(',').nth(4))
         .collect();
+    let titles = Titles { inner: titles };
+
+    let data = names.inner.iter().zip(titles.inner.iter());
 }
