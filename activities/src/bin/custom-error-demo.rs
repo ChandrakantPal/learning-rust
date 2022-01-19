@@ -12,3 +12,11 @@ enum PassError {
     InsufficientFunds(isize),
     ReadError(String),
 }
+
+fn swipe_card() -> Result<SubwayPass, PassError> {
+    Ok(SubwayPass {
+        id: 0,
+        funds: 200,
+        expires: Utc::now() + Duration::weeks(52),
+    })
+}
