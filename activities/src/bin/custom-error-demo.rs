@@ -20,3 +20,7 @@ fn swipe_card() -> Result<SubwayPass, PassError> {
         expires: Utc::now() + Duration::weeks(52),
     })
 }
+
+fn use_pass(pass: &mut SubwayPass, cost: isize) -> Result<(), PassError> {}
+
+fn main() {}
