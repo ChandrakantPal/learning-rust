@@ -7,9 +7,13 @@ struct SubwayPass {
     expires: DateTime<Utc>,
 }
 
+#[derive(Debug, Error)]
 enum PassError {
+    #[error("expired pass")]
     PassExpired,
+    #[error("insufficient funds: {0}")]
     InsufficientFunds(isize),
+    #[error("pass read error {0}")]
     ReadError(String),
 }
 
