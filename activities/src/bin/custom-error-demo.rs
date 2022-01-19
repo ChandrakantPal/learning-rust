@@ -25,6 +25,14 @@ fn swipe_card() -> Result<SubwayPass, PassError> {
     })
 }
 
-fn use_pass(pass: &mut SubwayPass, cost: isize) -> Result<(), PassError> {}
+fn use_pass(pass: &mut SubwayPass, cost: isize) -> Result<(), PassError> {
+    if Utc::now() > pass.expires {
+        Err(PassError::PassExpired)
+    } else {
+        if pass.funds - cost < 0 {
+            Err(PassError::InsufficientFunds(pass.funds))
+        }
+    }
+}
 
 fn main() {}
