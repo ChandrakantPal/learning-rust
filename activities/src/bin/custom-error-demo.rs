@@ -18,10 +18,11 @@ enum PassError {
 }
 
 fn swipe_card() -> Result<SubwayPass, PassError> {
+    // Err(PassError::ReadError("Magstrip failed to read".to_owned()))
     Ok(SubwayPass {
         id: 0,
         funds: 200,
-        expires: Utc::now() + Duration::weeks(52),
+        expires: Utc::now() - Duration::weeks(52),
     })
 }
 
