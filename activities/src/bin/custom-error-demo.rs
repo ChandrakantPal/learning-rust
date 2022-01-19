@@ -6,3 +6,9 @@ struct SubwayPass {
     funds: isize,
     expires: DateTime<Utc>,
 }
+
+enum PassError {
+    PassExpired,
+    InsufficientFunds(isize),
+    ReadError(String),
+}
