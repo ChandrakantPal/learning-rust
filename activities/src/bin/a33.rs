@@ -8,7 +8,7 @@
 // * No data may be copied (cannot use .to_owned() or .to_string())
 // * If both strings are the same length, the first one should be returned
 
-fn longest(one: &str, two: &str) -> &str {
+fn longest<'a>(one: &'a str, two: &'a str) -> &'a str {
     if two > one {
         two
     } else {
