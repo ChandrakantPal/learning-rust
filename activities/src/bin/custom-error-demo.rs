@@ -38,4 +38,10 @@ fn use_pass(pass: &mut SubwayPass, cost: isize) -> Result<(), PassError> {
     }
 }
 
-fn main() {}
+fn main() {
+    let pass_status = swipe_card().and_then(|mut pass| use_pass(&mut pass, 3));
+    match pass_status {
+        Ok(_) => println!("ok to board"),
+        Err(e) => println!("error: {}", e),
+    }
+}
