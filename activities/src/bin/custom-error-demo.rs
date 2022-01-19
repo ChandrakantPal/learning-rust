@@ -31,6 +31,9 @@ fn use_pass(pass: &mut SubwayPass, cost: isize) -> Result<(), PassError> {
     } else {
         if pass.funds - cost < 0 {
             Err(PassError::InsufficientFunds(pass.funds))
+        } else {
+            pass.funds = pass.funds - cost;
+            Ok(())
         }
     }
 }
