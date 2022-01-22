@@ -16,4 +16,9 @@ fn divide(a: i32, b: NeverZero) -> i32 {
     a / b
 }
 
-fn main() {}
+fn main() {
+    match NeverZero::new(5) {
+        Ok(nz) => println!("{:?}", divide(10, nz)),
+        Err(e) => println!("{:?}", e),
+    }
+}
