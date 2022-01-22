@@ -11,6 +11,9 @@ impl NeverZero {
     }
 }
 
-fn divide(a: i32, b: NeverZero) -> i32 {}
+fn divide(a: i32, b: NeverZero) -> i32 {
+    let b = b.0;
+    a / b
+}
 
 fn main() {}
