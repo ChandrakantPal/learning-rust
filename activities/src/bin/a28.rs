@@ -41,4 +41,9 @@ impl PantsColor {
         Self(color)
     }
 }
+
+fn print_shirt_color(color: ShirtColor) {
+    println!("shirt color = {:?}", color);
+}
+
 fn main() {}
