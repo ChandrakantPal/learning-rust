@@ -27,6 +27,13 @@ enum Color {
 #[derive(Debug)]
 struct ShirtColor(Color);
 impl ShirtColor {
+    // Purple not allowed
+    // fn new(color: Color) -> Result<Self, String> {
+    //     match color {
+    //         Color::Purple => Err("purple not allowed".to_owned()),
+    //         other=> Ok(Self(other))
+    //     }
+    // }
     fn new(color: Color) -> Self {
         Self(color)
     }
