@@ -36,5 +36,9 @@ impl ShoesColor {
     }
 }
 struct PantsColor(Color);
-
+impl PantsColor {
+    fn new(color: Color) -> Self {
+        Self(color)
+    }
+}
 fn main() {}
