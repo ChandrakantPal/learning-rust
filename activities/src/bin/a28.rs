@@ -50,4 +50,8 @@ fn print_shoes_color(color: ShoesColor) {
     println!("shoes color = {:?}", color);
 }
 
+fn print_pants_color(color: PantsColor) {
+    println!("pants color = {:?}", color);
+}
+
 fn main() {}
