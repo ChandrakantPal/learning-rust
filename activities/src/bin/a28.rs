@@ -60,4 +60,8 @@ fn print_pants_color(color: PantsColor) {
     println!("pants color = {:?}", color);
 }
 
-fn main() {}
+fn main() {
+    let shirt_color = ShirtColor::new(Color::Gray);
+    let pants_color = PantsColor::new(Color::Blue);
+    let shoes_color = ShoesColor::new(Color::White);
+}
