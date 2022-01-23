@@ -25,5 +25,6 @@ enum Color {
 
 struct ShirtColor(Color);
 struct ShoesColor(Color);
+struct PantsColor(Color);
 
 fn main() {}
