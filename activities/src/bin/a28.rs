@@ -46,4 +46,8 @@ fn print_shirt_color(color: ShirtColor) {
     println!("shirt color = {:?}", color);
 }
 
+fn print_shoes_color(color: ShoesColor) {
+    println!("shoes color = {:?}", color);
+}
+
 fn main() {}
