@@ -6,3 +6,6 @@ struct Employee<State> {
 struct Agreement;
 struct Signature;
 struct Training;
+struct FailedTraining {
+    score: u8,
+}
