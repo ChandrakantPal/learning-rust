@@ -36,4 +36,5 @@ impl Employee<Agreement> {
 
 fn main() {
     let employee = Employee::new("Sanjay");
+    let onboarded = employee.read_agreement();
 }
