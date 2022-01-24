@@ -52,5 +52,9 @@ impl Employee<Training> {
 
 fn main() {
     let employee = Employee::new("Sanjay");
-    let onboarded = employee.read_agreement().sign();
+    let onboarded = employee.read_agreement().sign().train(6);
+    match onboarded {
+        Ok(emp) => println!("onboarding complete"),
+        Err(emp) => println!("training failed, score: {}", emp.state.score),
+    }
 }
