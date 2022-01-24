@@ -29,6 +29,9 @@ impl Employee<Agreement> {
             state: Agreement,
         }
     }
+    fn read_agreement(self) -> Employee<Signature> {
+        self.transition(Signature)
+    }
 }
 
 fn main() {
