@@ -40,7 +40,17 @@ impl Employee<Signature> {
     }
 }
 
+impl Employee<Training> {
+    fn train(self, score: u8) -> Result<Employee<OnboardingComplete>, Employee<FailedTraining>> {
+        if score >= 7 {
+            Ok(self.transition(OnboardingComplete { score }))
+        } else {
+            Err(self.transition(FailedTraining { score }))
+        }
+    }
+}
+
 fn main() {
     let employee = Employee::new("Sanjay");
-    let onboarded = employee.read_agreement();
+    let onboarded = employee.read_agreement().sign();
 }
