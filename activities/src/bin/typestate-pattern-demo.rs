@@ -21,3 +21,12 @@ struct FailedTraining {
 struct OnboardingComplete {
     score: u8,
 }
+
+impl Employee<Agreement> {
+    fn new(name: &str) -> Self {
+        Self {
+            name: name.to_string(),
+            state: Agreement,
+        }
+    }
+}
