@@ -30,3 +30,7 @@ impl Employee<Agreement> {
         }
     }
 }
+
+fn main() {
+    let employee = Employee::new("Sanjay");
+}
