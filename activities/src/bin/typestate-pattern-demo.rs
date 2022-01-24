@@ -34,6 +34,12 @@ impl Employee<Agreement> {
     }
 }
 
+impl Employee<Signature> {
+    fn sign(self) -> Employee<Training> {
+        self.transition(Training)
+    }
+}
+
 fn main() {
     let employee = Employee::new("Sanjay");
     let onboarded = employee.read_agreement();
