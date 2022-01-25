@@ -37,4 +37,10 @@ impl Luggage {
     }
 }
 
+impl CheckIn {
+    fn onload(self) -> OnLoad {
+        OnLoad(self.0)
+    }
+}
+
 fn main() {}
