@@ -55,4 +55,10 @@ impl OffLoad {
     }
 }
 
+impl AwaitingPickup {
+    fn pickup(self) -> (Luggage, EndCustody) {
+        (Luggage(self.0), EndCustody(self.o))
+    }
+}
+
 fn main() {}
