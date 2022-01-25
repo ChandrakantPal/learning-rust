@@ -27,4 +27,10 @@ struct OffLoad(LuggageId);
 struct AwaitingPickup(LuggageId);
 struct EndCustody(LuggageId);
 
+impl Luggage {
+    fn new(id: LuggageId) -> Self {
+        Luggage(id)
+    }
+}
+
 fn main() {}
