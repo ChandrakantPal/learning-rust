@@ -22,5 +22,6 @@ struct LuggageId(usize);
 struct Luggage(LuggageId);
 
 struct CheckIn(LuggageId);
+struct OnLoad(LuggageId);
 
 fn main() {}
