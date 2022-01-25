@@ -16,7 +16,11 @@
 // Notes:
 // * Optionally use generics for each state
 
+#[derive(Copy, Clone)]
 struct LuggageId(usize);
+
 struct Luggage(LuggageId);
+
+struct CheckIn(LuggageId);
 
 fn main() {}
