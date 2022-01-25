@@ -25,5 +25,6 @@ struct CheckIn(LuggageId);
 struct OnLoad(LuggageId);
 struct OffLoad(LuggageId);
 struct AwaitingPickup(LuggageId);
+struct EndCustody(LuggageId);
 
 fn main() {}
