@@ -24,5 +24,6 @@ struct Luggage(LuggageId);
 struct CheckIn(LuggageId);
 struct OnLoad(LuggageId);
 struct OffLoad(LuggageId);
+struct AwaitingPickup(LuggageId);
 
 fn main() {}
