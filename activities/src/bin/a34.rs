@@ -43,4 +43,10 @@ impl CheckIn {
     }
 }
 
+impl OnLoad {
+    fn offload(self) -> OffLoad {
+        OffLoad(self.0)
+    }
+}
+
 fn main() {}
