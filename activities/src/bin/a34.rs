@@ -61,4 +61,7 @@ impl AwaitingPickup {
     }
 }
 
-fn main() {}
+fn main() {
+    let id = LuggageId(1);
+    let luggage = Luggage::new(id);
+}
