@@ -49,4 +49,10 @@ impl OnLoad {
     }
 }
 
+impl OffLoad {
+    fn carousel(self) -> AwaitingPickup {
+        AwaitingPickup(self.0)
+    }
+}
+
 fn main() {}
