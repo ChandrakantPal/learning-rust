@@ -31,6 +31,10 @@ impl Luggage {
     fn new(id: LuggageId) -> Self {
         Luggage(id)
     }
+
+    fn check_in(self) -> CheckIn {
+        CheckIn(self.0)
+    }
 }
 
 fn main() {}
