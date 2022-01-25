@@ -65,4 +65,5 @@ fn main() {
     let id = LuggageId(1);
     let luggage = Luggage::new(id);
     let luggage = luggage.check_in().onload().offload().carousel();
+    let (luggage, _) = luggage.pickup();
 }
