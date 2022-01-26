@@ -21,5 +21,8 @@ fn main() {
             age: 4..=10 | 15..=20,
             ..
         } => println!("4-10 or 15-20 year old bird"),
+        Bird {
+            species: Species::Finch,
+        } => println!("finch!"),
     }
 }
