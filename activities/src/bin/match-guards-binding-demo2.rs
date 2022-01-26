@@ -17,5 +17,9 @@ fn main() {
 
     match hawk {
         Bird { age: 4, .. } => println!("4 year old bird"),
+        Bird {
+            age: 4..=10 | 15..=20,
+            ..
+        } => println!("4-10 or 15-20 year old bird"),
     }
 }
