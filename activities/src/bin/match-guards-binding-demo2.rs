@@ -24,5 +24,6 @@ fn main() {
         Bird {
             species: Species::Finch,
         } => println!("finch!"),
+        Bird { .. } => println!("other bird"),
     }
 }
