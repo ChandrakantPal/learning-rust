@@ -5,4 +5,7 @@ enum Difficulty {
     Hard,
 }
 
-fn main() {}
+fn main() {
+    let stage = 5;
+    let diff Difficulty::Normal
+}
