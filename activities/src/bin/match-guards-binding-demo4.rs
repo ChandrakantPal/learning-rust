@@ -4,5 +4,8 @@ enum Vehicle {
 }
 
 fn main() {
-    
+    let car = Vehicle {
+        km: 80_000,
+        year: 2020
+    }
 }
