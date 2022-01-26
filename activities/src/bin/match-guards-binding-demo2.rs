@@ -4,4 +4,9 @@ enum Species {
     Parrot,
 }
 
+struct Bird {
+    age: usize,
+    species: Species,
+}
+
 fn main() {}
