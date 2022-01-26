@@ -9,4 +9,9 @@ struct Bird {
     species: Species,
 }
 
-fn main() {}
+fn main() {
+    let hawk = Bird {
+        age: 13,
+        species: Species::Hawk
+    }
+}
