@@ -72,4 +72,16 @@ fn print_tile(tile: Tile) {
 fn main() {
     let tile = Tile::Brick(BrickStyle::Red);
     print_tile(tile);
+
+    let tile = Tile::Sand;
+    print_tile(tile);
+
+    let tile = Tile::Treasure(TreasureChest {
+        content: TreasureItem::Gold,
+        amount: 200,
+    });
+    print_tile(tile);
+
+    let tile = Tile::Water(Pressure(9));
+    print_tile(tile);
 }
