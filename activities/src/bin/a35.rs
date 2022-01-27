@@ -69,4 +69,7 @@ fn print_tile(tile: Tile) {
     }
 }
 
-fn main() {}
+fn main() {
+    let tile = Tile::Brick(BrickStyle::Red);
+    print_tile(tile);
+}
