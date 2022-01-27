@@ -60,6 +60,7 @@ fn print_tile(tile: Tile) {
         Brick(brick @ BrickStyle::Gray | brick @ BrickStyle::Red) => {
             println!("the brick color is {:?}", brick)
         }
+        Brick(other) => println!("{:?} brick", other),
     }
 }
 
