@@ -61,6 +61,7 @@ fn print_tile(tile: Tile) {
             println!("the brick color is {:?}", brick)
         }
         Brick(other) => println!("{:?} brick", other),
+        Dirt | Grass | Sand => println!("Ground tile "),
     }
 }
 
