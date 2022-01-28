@@ -19,6 +19,7 @@ fn process_chunk(data: &[u64]) {
         [lhs, rhs] => println!("{}+{}={}", lhs, rhs, (lhs + rhs)),
         [single] => println!("Unpaired value: {}", single),
         [] => println!("Data stream complete"),
+        [..] => unreachable!("chunk size should be at most 2"),
     }
 }
 
