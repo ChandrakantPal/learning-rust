@@ -5,3 +5,9 @@ impl From<String> for Uppercase {
         Uppercase(data.to_uppercase())
     }
 }
+
+impl From<&str> for Uppercase {
+    fn from(data: &str) -> Self {
+        Uppercase(data.to_uppercase())
+    }
+}
