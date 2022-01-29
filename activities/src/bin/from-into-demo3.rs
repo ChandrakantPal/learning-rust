@@ -11,3 +11,11 @@ enum DatabaseError {
     #[error("error querying database")]
     QueryFailure,
 }
+
+#[derive(Debug, Error)]
+enum ApiError {
+    #[error("network error: {0}")]
+    Network(NetworkError),
+    #[error("database error: {0}")]
+    Database(DatabaseError),
+}
