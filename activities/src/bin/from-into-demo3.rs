@@ -19,3 +19,7 @@ enum ApiError {
     #[error("database error: {0}")]
     Database(DatabaseError),
 }
+
+fn do_stuff() -> Result<(), ApiError> {
+    Err(NetworkError::Timeout)?
+}
