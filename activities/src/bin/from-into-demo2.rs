@@ -1,0 +1,4 @@
+enum KeyPress {
+    Down,
+    Up,
+}
