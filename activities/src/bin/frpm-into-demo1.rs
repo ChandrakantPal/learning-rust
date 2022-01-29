@@ -11,3 +11,7 @@ impl From<&str> for Uppercase {
         Uppercase(data.to_uppercase())
     }
 }
+
+fn main() {
+    let upper = Uppercase::from("lowercase")
+}
