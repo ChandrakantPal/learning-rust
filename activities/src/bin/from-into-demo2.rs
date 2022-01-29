@@ -18,3 +18,12 @@ impl From<KeyEvent> for InputEvent {
         InputEvent::Key(ev.keycode, ev.state)
     }
 }
+
+fn main() {
+    let key_ev = KeyEvent {
+        keycode: 5,
+        state: KeyPress::Down
+    };
+
+    let input_ev = InputEvent::from(key_ev)
+}
