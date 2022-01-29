@@ -15,9 +15,9 @@ enum DatabaseError {
 #[derive(Debug, Error)]
 enum ApiError {
     #[error("network error: {0}")]
-    Network(NetworkError),
+    Network(#[from] NetworkError),
     #[error("database error: {0}")]
-    Database(DatabaseError),
+    Database(#[from] DatabaseError),
 }
 
 impl From<NetworkError> for ApiError {
