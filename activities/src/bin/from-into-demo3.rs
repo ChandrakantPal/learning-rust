@@ -20,17 +20,17 @@ enum ApiError {
     Database(#[from] DatabaseError),
 }
 
-impl From<NetworkError> for ApiError {
-    fn from(err: NetworkError) -> Self {
-        Self::Network(err)
-    }
-}
+// impl From<NetworkError> for ApiError {
+//     fn from(err: NetworkError) -> Self {
+//         Self::Network(err)
+//     }
+// }
 
-impl From<DatabaseError> for ApiError {
-    fn from(err: DatabaseError) -> Self {
-        Self::Database(err)
-    }
-}
+// impl From<DatabaseError> for ApiError {
+//     fn from(err: DatabaseError) -> Self {
+//         Self::Database(err)
+//     }
+// }
 
 fn do_stuff() -> Result<(), ApiError> {
     Err(NetworkError::Timeout)?
