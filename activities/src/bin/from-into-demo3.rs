@@ -26,6 +26,12 @@ impl From<NetworkError> for ApiError {
     }
 }
 
+impl From<DatabaseError> for ApiError {
+    fn from(err: DatabaseError) -> Self {
+        Self::Database(err)
+    }
+}
+
 fn do_stuff() -> Result<(), ApiError> {
     Err(NetworkError::Timeout)?
 }
