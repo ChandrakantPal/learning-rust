@@ -22,8 +22,9 @@ impl From<KeyEvent> for InputEvent {
 fn main() {
     let key_ev = KeyEvent {
         keycode: 5,
-        state: KeyPress::Down
+        state: KeyPress::Down,
     };
 
-    let input_ev = InputEvent::from(key_ev)
+    let input_ev = InputEvent::from(key_ev);
+    let input_ev: InputEvent = key_ev.into();
 }
