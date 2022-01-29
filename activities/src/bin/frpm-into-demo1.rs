@@ -13,5 +13,6 @@ impl From<&str> for Uppercase {
 }
 
 fn main() {
-    let upper = Uppercase::from("lowercase")
+    let upper = Uppercase::from("lowercase");
+    let upper: Uppercase = "lowercase".into();
 }
