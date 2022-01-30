@@ -23,6 +23,7 @@
 // * Run `cargo test --bin a37` to test your implementation
 
 use std::convert::TryFrom;
+use thiserror::Error;
 
 #[derive(Debug, Eq, PartialEq)]
 struct Rgb(u8, u8, u8);
