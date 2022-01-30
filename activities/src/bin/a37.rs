@@ -27,8 +27,11 @@ use thiserror::Error;
 
 #[derive(Debug, Error)]
 enum RgbError {
+    #[error("hex colors must begin with a hash (#)")]
     MissingHash,
-    ParseError,
+    #[error("failed to parse hex digit: {0}")]
+    ParseError(std::num::ParseIntError),
+    #[error("invalid hex color length (must be 6)")]
     LengthError,
 }
 
