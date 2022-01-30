@@ -59,6 +59,12 @@ impl TryFrom<&str> for Rgb {
     }
 }
 
+impl From<std::num::ParseIntError> for RgbError {
+    fn from(err: std::num::ParseIntError) -> Self {
+        Self::ParseError(err)
+    }
+}
+
 fn main() {
     // Use `cargo test --bin a37` to test your implementation
 }
