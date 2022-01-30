@@ -25,6 +25,13 @@
 use std::convert::TryFrom;
 use thiserror::Error;
 
+#[derive(Debug, Error)]
+enum RgbError {
+    MissingHash,
+    ParseError,
+    LengthError,
+}
+
 #[derive(Debug, Eq, PartialEq)]
 struct Rgb(u8, u8, u8);
 
