@@ -9,4 +9,6 @@ fn main() {
     let sub = Box::new(|a, b| a - b);
     let mul = Box::new(|a, b| a * b);
     println!("{}", math(25, 45, add));
+    println!("{}", math(25, 45, sub));
+    println!("{}", math(25, 45, mul));
 }
