@@ -3,7 +3,7 @@ fn math(a: i32, b: i32, op: Box<dyn Fn(i32, i32) -> i32>) -> i32 {
 }
 fn main() {
     let name = "Sanjay";
-    let add = Box::new(|a, b| {
+    let add = Box::new(move |a, b| {
         println!("adding a number for {}", name);
         a + b
     });
