@@ -1,4 +1,5 @@
 use std::thread;
+use std::thread::JoinHandle;
 use std::time::Duration;
 
 fn main() {
@@ -11,6 +12,6 @@ fn main() {
 
     match value.join() {
         Ok(n) => println!("value: {}", n),
-        Err(e) => println!("error joining thread: {}", e),
+        Err(e) => println!("error joining thread: {:?}", e),
     }
 }
