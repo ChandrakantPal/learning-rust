@@ -7,4 +7,10 @@ fn main() {
             println!("A:{}", i);
         }
     });
+
+    let b = thread::spawn(move || {
+        for i in 1..=iterations {
+            println!("B:{}", i);
+        }
+    });
 }
