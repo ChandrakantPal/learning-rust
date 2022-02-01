@@ -6,4 +6,11 @@ fn main() {
         let data: Vec<char> = data.iter().map(|c| c.to_ascii_uppercase()).collect();
         data
     });
+
+    println!("Waiting on thread");
+
+    match caps.join() {
+        Ok(n) => println!("value: {:?}", n),
+        Err(e) => println!("error joining thread: {:?}", e),
+    }
 }
