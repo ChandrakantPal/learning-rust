@@ -10,7 +10,10 @@ fn main() {
 
     let b = thread::spawn(move || {
         for i in 1..=iterations {
-            println!("B:{}", i);
+            println!("   B:{}", i);
         }
     });
+
+    a.join();
+    b.join();
 }
