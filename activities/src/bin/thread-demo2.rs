@@ -6,4 +6,11 @@ fn main() {
         thread::sleep(Duration::from_secs(1));
         42
     });
+
+    println!("Waiting on thread");
+
+    match value.join() {
+        Ok(n) => println!("value: {}", n),
+        Err(e) => println!("error joining thread: {}", e),
+    }
 }
