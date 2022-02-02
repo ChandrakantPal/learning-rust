@@ -30,4 +30,5 @@ fn main() {
     use std::thread;
 
     let msg_one = thread::spawn(move || msg_hello());
+    let msg_two = thread::spawn(move || msg_thread());
 }
