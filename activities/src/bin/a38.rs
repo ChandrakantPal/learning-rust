@@ -31,4 +31,5 @@ fn main() {
 
     let msg_one = thread::spawn(move || msg_hello());
     let msg_two = thread::spawn(move || msg_thread());
+    let msg_three = thread::spawn(move || msg_excited());
 }
