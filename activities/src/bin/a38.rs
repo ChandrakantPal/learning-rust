@@ -28,4 +28,6 @@ fn msg_excited() -> &'static str {
 
 fn main() {
     use std::thread;
+
+    let msg_one = thread::spawn(move || msg_hello());
 }
