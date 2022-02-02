@@ -36,4 +36,6 @@ fn main() {
     let msg_one = msg_one.join().expect("failed to join msg one");
     let msg_two = msg_two.join().expect("failed to join msg two");
     let msg_three = msg_three.join().expect("failed to join msg three");
+
+    println!("{}{}{}", msg_one, msg_two, msg_three);
 }
