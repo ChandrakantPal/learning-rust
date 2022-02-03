@@ -6,3 +6,7 @@ enum ThreadMsg {
     Sum(i64, i64),
     Quit,
 }
+
+fn main() {
+    let (s, r) = unbounded();
+}
