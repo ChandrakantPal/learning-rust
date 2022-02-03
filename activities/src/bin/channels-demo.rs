@@ -30,4 +30,5 @@ fn main() {
     s.send(ThreadMsg::PrintData("hello from main".to_owned()));
     s.send(ThreadMsg::Sum(10, 10));
     s.send(ThreadMsg::Quit);
+    handle.join();
 }
