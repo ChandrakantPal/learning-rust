@@ -9,4 +9,23 @@ enum ThreadMsg {
 
 fn main() {
     let (s, r) = unbounded();
+
+    let handle = thread::spawn(move || loop {
+        match r.recv() {
+            Ok(msg) => match msg {
+                ThreadMsg::PrintData(d) => println!("{}", d),
+                ThreadMsg::Sum(lhs, rhs) => println!("{}+{}={}", lhs, rhs, (lhs + rhs)),
+                ThreadMsg::Quit => {
+                    println!("thread terminating");
+                    break;
+                }
+            },
+            Err(e) => {
+                println!("disconnected");
+                break;
+            }
+        }
+    });
+
+    s.send(ThreadMsg::PrintData("hello from main".to_owned()));
 }
