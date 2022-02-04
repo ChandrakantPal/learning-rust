@@ -1,7 +1,7 @@
 use crossbeam_channel::unbounded;
 use std::thread;
 
-enum ThreadMsg {
+enum WorkerMsg {
     PrintData(String),
     Sum(i64, i64),
     Quit,
