@@ -40,7 +40,7 @@ fn main() {
     });
 
     worker_tx.send(WorkerMsg::PrintData("hello from main".to_owned()));
-    s.send(ThreadMsg::Sum(10, 10));
+    worker_tx.send(WorkerMsg::Sum(10, 10));
     s.send(ThreadMsg::Quit);
     // drop(s);
     handle.join();
