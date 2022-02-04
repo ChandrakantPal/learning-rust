@@ -41,7 +41,7 @@ fn main() {
 
     worker_tx.send(WorkerMsg::PrintData("hello from main".to_owned()));
     worker_tx.send(WorkerMsg::Sum(10, 10));
-    s.send(ThreadMsg::Quit);
+    worker_tx.send(WorkerMsg::Quit);
     // drop(s);
     handle.join();
 }
