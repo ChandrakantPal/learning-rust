@@ -16,8 +16,8 @@ fn main() {
     let (worker_tx, worker_rx) = unbounded();
     let (main_tx, main_rx) = unbounded();
 
-    let handle = thread::spawn(move || loop {
-        match r.recv() {
+    let worker = thread::spawn(move || loop {
+        match worker_rx.recv() {
             Ok(msg) => match msg {
                 ThreadMsg::PrintData(d) => println!("{}", d),
                 ThreadMsg::Sum(lhs, rhs) => println!("{}+{}={}", lhs, rhs, (lhs + rhs)),
