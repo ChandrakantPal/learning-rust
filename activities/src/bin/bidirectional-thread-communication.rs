@@ -32,7 +32,8 @@ fn main() {
                 }
             },
             Err(e) => {
-                println!("disconnected");
+                println!("Worker: disconnected");
+                main_tx.try_send(MainMsg::WorkerQuit);
                 break;
             }
         }
