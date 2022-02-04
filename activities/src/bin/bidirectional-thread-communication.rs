@@ -21,12 +21,13 @@ fn main() {
             Ok(msg) => match msg {
                 WorkerMsg::PrintData(d) => println!("Worker: {}", d),
                 WorkerMsg::Sum(lhs, rhs) => {
+                    println!("Worker: summig...");
                     main_tx.send(MainMsg::SumResult(lhs + rhs));
                     ()
                 }
                 WorkerMsg::Quit => {
                     println!("Worker: terminating...");
-                    main_tx.send(MainMsg::WorkerQuit)
+                    main_tx.send(MainMsg::WorkerQuit);
                     break;
                 }
             },
