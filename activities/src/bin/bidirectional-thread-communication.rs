@@ -19,10 +19,14 @@ fn main() {
     let worker = thread::spawn(move || loop {
         match worker_rx.recv() {
             Ok(msg) => match msg {
-                ThreadMsg::PrintData(d) => println!("{}", d),
-                ThreadMsg::Sum(lhs, rhs) => println!("{}+{}={}", lhs, rhs, (lhs + rhs)),
-                ThreadMsg::Quit => {
-                    println!("thread terminating");
+                WorkerMsg::PrintData(d) => println!("Worker: {}", d),
+                WorkerMsg::Sum(lhs, rhs) => {
+                    main_tx.send(MainMsg::SumResult(lhs + rhs));
+                    ()
+                }
+                WorkerMsg::Quit => {
+                    println!("Worker: terminating...");
+                    main_tx.send(MainMsg::WorkerQuit)
                     break;
                 }
             },
