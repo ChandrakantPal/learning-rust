@@ -7,6 +7,11 @@ enum ThreadMsg {
     Quit,
 }
 
+enum MainMsg {
+    SumResult(i64),
+    WorkerQuit,
+}
+
 fn main() {
     let (worker_tx, worker_rx) = unbounded();
     let (main_tx, main_rx) = unbounded();
