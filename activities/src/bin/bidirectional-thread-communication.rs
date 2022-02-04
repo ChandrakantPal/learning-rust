@@ -46,6 +46,7 @@ fn main() {
     while let Ok(msg) = main_rx.recv() {
         match msg {
             MainMsg::SumResult(answer) => println!("Main: answer = {}", answer),
+            MainMsg::WorkerQuit => println!("Main: worker terminated"),
         }
     }
 
