@@ -9,6 +9,7 @@ enum ThreadMsg {
 
 fn main() {
     let (worker_tx, worker_rx) = unbounded();
+    let (main_tx, main_rx) = unbounded();
 
     let handle = thread::spawn(move || loop {
         match r.recv() {
