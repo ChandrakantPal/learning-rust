@@ -45,6 +45,8 @@ fn main() {
     let (s, r) = unbounded();
 
     let light = spawn_light_thread(r);
+
+    s.send(LightMsg::On);
 }
 
 #[cfg(test)]
