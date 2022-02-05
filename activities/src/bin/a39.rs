@@ -59,10 +59,20 @@ fn spawn_light_thread(receiver: Receiver<LightMsg>) -> JoinHandle<LightStatus> {
                         println!("Turned light off");
                         light_status = LightStatus::Off;
                     }
+                    LightMsg::Disconnect => {
+                        println!("disconnecting");
+                        light_status = LightStatus::Off;
+                        break;
+                    }
                 }
+            } else {
+                println!("channel disconnected");
+                light_status = LightStatus::Off;
+                break;
             }
         }
-    })
+        light_status
+    });
 }
 
 fn main() {
