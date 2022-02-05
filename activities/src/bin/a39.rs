@@ -43,6 +43,8 @@ fn spawn_light_thread(receiver: Receiver<LightMsg>) -> JoinHandle<LightStatus> {
 
 fn main() {
     let (s, r) = unbounded();
+
+    let light = spawn_light_thread(r);
 }
 
 #[cfg(test)]
