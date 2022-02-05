@@ -41,6 +41,23 @@ fn spawn_light_thread(receiver: Receiver<LightMsg>) -> JoinHandle<LightStatus> {
     // Add code here to spawn a thread to control the light bulb
     thread::spawn(move || {
         let mut light_status = LightStatus::Off;
+        loop {
+            if let Ok(msg) = receiver.recv() {
+                match msg {
+                    LightMsg::ChangeColor(r, g, b) => {
+                        println!("Color changed to: {}", "      ".on_truecolor(r, g, b));
+                        match light_status {
+                            LightStatus::Off => println!("Light is OFF"),
+                            LightStatus::On => println!("Light is On"),
+                        }
+                    }
+                    LightMsg::On => {
+                        println!("Turned light on");
+                        light_status = LightStatus::On;
+                    }
+                }
+            }
+        }
     })
 }
 
