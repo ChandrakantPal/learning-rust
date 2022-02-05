@@ -41,7 +41,9 @@ fn spawn_light_thread(receiver: Receiver<LightMsg>) -> JoinHandle<LightStatus> {
     // Add code here to spawn a thread to control the light bulb
 }
 
-fn main() {}
+fn main() {
+    let (s, r) = unbounded();
+}
 
 #[cfg(test)]
 mod test {
