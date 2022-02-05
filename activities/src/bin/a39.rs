@@ -55,6 +55,10 @@ fn spawn_light_thread(receiver: Receiver<LightMsg>) -> JoinHandle<LightStatus> {
                         println!("Turned light on");
                         light_status = LightStatus::On;
                     }
+                    LightMsg::Off => {
+                        println!("Turned light off");
+                        light_status = LightStatus::Off;
+                    }
                 }
             }
         }
