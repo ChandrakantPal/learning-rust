@@ -47,6 +47,9 @@ fn main() {
     let light = spawn_light_thread(r);
 
     s.send(LightMsg::On);
+    s.send(LightMsg::ChangeColor(255, 0, 0));
+    s.send(LightMsg::ChangeColor(0, 128, 0));
+    s.send(LightMsg::ChangeColor(0, 0, 255));
 }
 
 #[cfg(test)]
