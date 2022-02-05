@@ -39,7 +39,9 @@ enum LightStatus {
 
 fn spawn_light_thread(receiver: Receiver<LightMsg>) -> JoinHandle<LightStatus> {
     // Add code here to spawn a thread to control the light bulb
-    thread::spawn(move || {})
+    thread::spawn(move || {
+        let mut light_status = LightStatus::Off;
+    })
 }
 
 fn main() {
