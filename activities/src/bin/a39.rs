@@ -20,7 +20,7 @@
 // * Disconnection can be accomplished by dropping the sender, or
 //   by telling the thread to self-terminate
 // * Use `cargo test --bin a39` to test your program to ensure all cases are covered
-
+use colored::*;
 use crossbeam_channel::{unbounded, Receiver};
 use std::thread::{self, JoinHandle};
 
@@ -72,7 +72,7 @@ fn spawn_light_thread(receiver: Receiver<LightMsg>) -> JoinHandle<LightStatus> {
             }
         }
         light_status
-    });
+    })
 }
 
 fn main() {
