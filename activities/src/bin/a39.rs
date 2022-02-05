@@ -50,6 +50,7 @@ fn main() {
     s.send(LightMsg::ChangeColor(255, 0, 0));
     s.send(LightMsg::ChangeColor(0, 128, 0));
     s.send(LightMsg::ChangeColor(0, 0, 255));
+    s.send(LightMsg::Off);
 }
 
 #[cfg(test)]
