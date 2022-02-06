@@ -27,8 +27,13 @@ fn new_table_order() -> TableOrder {
     }
 }
 
+#[derive(Debug)]
 struct Chef;
+
+#[derive(Debug)]
 struct WaitStaff;
+
+#[derive(Debug)]
 struct Accounting;
 
 fn main() {
