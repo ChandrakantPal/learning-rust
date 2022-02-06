@@ -40,4 +40,7 @@ struct Accounting(Order);
 
 fn main() {
     let orders = Rc::new(RefCell::new(vec![]));
+    let chef = Chef(Rc::clone(&orders));
+    let wait_staff = WaitStaff(Rc::clone(&orders));
+    let account = Accounting(Rc::clone(&orders));
 }
