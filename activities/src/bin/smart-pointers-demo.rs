@@ -30,13 +30,13 @@ fn new_table_order() -> TableOrder {
 type Order = Rc<RefCell<Vec<TableOrder>>>;
 
 #[derive(Debug)]
-struct Chef;
+struct Chef(Order);
 
 #[derive(Debug)]
-struct WaitStaff;
+struct WaitStaff(Order);
 
 #[derive(Debug)]
-struct Accounting;
+struct Accounting(Order);
 
 fn main() {
     let orders = Rc::new(RefCell::new(vec![]));
