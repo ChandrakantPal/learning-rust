@@ -43,4 +43,6 @@ fn main() {
     let chef = Chef(Rc::clone(&orders));
     let wait_staff = WaitStaff(Rc::clone(&orders));
     let account = Accounting(Rc::clone(&orders));
+
+    let order = new_table_order();
 }
