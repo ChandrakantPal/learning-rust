@@ -26,3 +26,7 @@ fn new_table_order() -> TableOrder {
         }],
     }
 }
+
+fn main() {
+    let orders = Rc::new(RefCell::new(vec![]));
+}
