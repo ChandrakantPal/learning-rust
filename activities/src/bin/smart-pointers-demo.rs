@@ -49,4 +49,8 @@ fn main() {
     {
         orders.borrow_mut().push(order);
     }
+
+    dbg!(chef.0.borrow());
+    dbg!(wait_staff.0.borrow());
+    dbg!(account.0.borrow());
 }
