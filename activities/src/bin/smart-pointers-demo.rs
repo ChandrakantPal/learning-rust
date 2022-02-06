@@ -6,3 +6,9 @@ enum MenuItem {
     Drink,
     Salad,
 }
+
+#[derive(Debug)]
+struct ItemOrder {
+    item: MenuItem,
+    quantity: u32,
+}
