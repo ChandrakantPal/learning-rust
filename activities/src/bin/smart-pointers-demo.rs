@@ -45,4 +45,8 @@ fn main() {
     let account = Accounting(Rc::clone(&orders));
 
     let order = new_table_order();
+
+    {
+        orders.borrow_mut().push(order);
+    }
 }
