@@ -28,6 +28,7 @@ fn new_table_order() -> TableOrder {
 }
 
 struct Chef;
+struct WaitStaff;
 
 fn main() {
     let orders = Rc::new(RefCell::new(vec![]));
