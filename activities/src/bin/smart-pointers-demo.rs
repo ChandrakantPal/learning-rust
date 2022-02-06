@@ -17,3 +17,12 @@ struct ItemOrder {
 struct TableOrder {
     items: Vec<ItemOrder>,
 }
+
+fn new_table_order() -> TableOrder {
+    TableOrder {
+        items: vec![ItemOrder {
+            item: MenuItem::Drink,
+            quantity: 1,
+        }],
+    }
+}
