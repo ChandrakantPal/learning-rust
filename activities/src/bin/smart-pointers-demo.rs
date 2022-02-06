@@ -27,6 +27,8 @@ fn new_table_order() -> TableOrder {
     }
 }
 
+type Order = Rc<RefCell<Vec<TableOrder>>>;
+
 #[derive(Debug)]
 struct Chef;
 
