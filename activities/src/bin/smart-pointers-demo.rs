@@ -51,6 +51,8 @@ fn main() {
     }
 
     dbg!(chef.0.borrow());
+    drop(chef);
     dbg!(wait_staff.0.borrow());
+    drop(wait_staff);
     dbg!(account.0.borrow());
 }
