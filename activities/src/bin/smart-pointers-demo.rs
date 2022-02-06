@@ -12,3 +12,8 @@ struct ItemOrder {
     item: MenuItem,
     quantity: u32,
 }
+
+#[derive(Debug)]
+struct TableOrder {
+    items: Vec<ItemOrder>,
+}
