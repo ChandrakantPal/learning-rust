@@ -24,6 +24,12 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
+#[derive(Debug)]
+enum Vehicle {
+    Car,
+    Truck,
+}
+
 struct Corporate;
 
 struct StoreFront;
