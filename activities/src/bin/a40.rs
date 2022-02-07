@@ -81,6 +81,13 @@ mod test {
                 car.status = Status::Rented;
             }
         }
-        
+
+        {
+            let mut rentals = corporate.0.borrow_mut();
+            if let Some(car) = rentals.get_mut(0) {
+                assert_eq!(car.status, Status::Rented);
+                car.status = Status::Available;
+            }
+        }
     }
 }
