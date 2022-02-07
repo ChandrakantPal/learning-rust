@@ -89,5 +89,11 @@ mod test {
                 car.status = Status::Available;
             }
         }
+
+        let rentals = storefront.0.borrow();
+        if let Some(car) = rentals.get(0) {
+            assert_eq!(car.status, Status::Available);
+        }
+
     }
 }
