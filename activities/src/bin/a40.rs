@@ -30,6 +30,14 @@ enum Vehicle {
     Truck,
 }
 
+#[derive(Debug, Hash, PartialOrd, PartialEq)]
+enum Status {
+    Available,
+    Unavailable,
+    Rented,
+    Maintenance,
+}
+
 struct Corporate;
 
 struct StoreFront;
