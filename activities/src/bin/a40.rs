@@ -38,6 +38,13 @@ enum Status {
     Maintenance,
 }
 
+#[derive(Debug)]
+struct Rental {
+    status: Status,
+    vehicle: Vehicle,
+    vin: String,
+}
+
 struct Corporate;
 
 struct StoreFront;
