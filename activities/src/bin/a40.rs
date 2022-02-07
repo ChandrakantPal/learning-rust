@@ -39,7 +39,7 @@ enum Status {
 }
 
 #[derive(Debug)]
-struct Rental {
+struct Rentals {
     status: Status,
     vehicle: Vehicle,
     vin: String,
@@ -50,3 +50,30 @@ struct Corporate(Rc<RefCell<Vec<Rental>>>);
 struct StoreFront(<RefCell<Vec<Rental>>>);
 
 fn main() {}
+
+#[cfg(test)]
+mod test {
+    use supper::*;
+
+    #[test]
+    fn update_status() {
+        let vehicles = vec![
+            Rentals {
+                status: Status::Available,
+                vehicle: Vehicle::Car,
+                vin: "123".to_owned(),
+            }
+            Rentals {
+                status: Status::Maintenance,
+                vehicle: Vehicle::Truck,
+                vin: "abc".to_owned(),
+            } 
+        ];
+        let vehicles = Rc::new(RefCell::new(vehicles));
+
+        let corporate = Corporate(Rc::clone(&vehicles));
+        let storefront = StoreFront(Rc::clone(&vehicles));
+
+        
+    }
+}
