@@ -45,15 +45,15 @@ struct Rentals {
     vin: String,
 }
 
-struct Corporate(Rc<RefCell<Vec<Rental>>>);
+struct Corporate(Rc<RefCell<Vec<Rentals>>>);
 
-struct StoreFront(<RefCell<Vec<Rental>>>);
+struct StoreFront(Rc<RefCell<Vec<Rentals>>>);
 
 fn main() {}
 
 #[cfg(test)]
 mod test {
-    use supper::*;
+    use super::*;
 
     #[test]
     fn update_status() {
@@ -62,12 +62,12 @@ mod test {
                 status: Status::Available,
                 vehicle: Vehicle::Car,
                 vin: "123".to_owned(),
-            }
+            },
             Rentals {
                 status: Status::Maintenance,
                 vehicle: Vehicle::Truck,
                 vin: "abc".to_owned(),
-            } 
+            },
         ];
         let vehicles = Rc::new(RefCell::new(vehicles));
 
@@ -94,6 +94,5 @@ mod test {
         if let Some(car) = rentals.get(0) {
             assert_eq!(car.status, Status::Available);
         }
-
     }
 }
