@@ -74,6 +74,13 @@ mod test {
         let corporate = Corporate(Rc::clone(&vehicles));
         let storefront = StoreFront(Rc::clone(&vehicles));
 
+        {
+            let mut rentals = storefront.0.borrow_mut();
+            if let Some(car) = rentals.get_mut(0) {
+                assert_eq!(car.status, Status::Available);
+                car.status = Status::Rented;
+            }
+        }
         
     }
 }
