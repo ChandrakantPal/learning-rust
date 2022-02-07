@@ -45,8 +45,8 @@ struct Rental {
     vin: String,
 }
 
-struct Corporate;
+struct Corporate(Rc<RefCell<Vec<Rental>>>);
 
-struct StoreFront;
+struct StoreFront(<RefCell<Vec<Rental>>>);
 
 fn main() {}
