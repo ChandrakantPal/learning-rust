@@ -8,3 +8,11 @@ type SharedSignData = Arc<Mutex<String>>;
 struct DigitalSignBoard {
     display: SharedSignData,
 }
+
+impl DigitalSignBoard {
+    fn update(&self) {
+        let data = self.display().lock();
+        println!("sign data='{}'", data);
+        // place on digital sign
+    }
+}
