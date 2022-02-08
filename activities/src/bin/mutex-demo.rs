@@ -16,3 +16,16 @@ impl DigitalSignBoard {
         // place on digital sign
     }
 }
+
+fn spawn_display_thread(display_data: SharedSignData) {
+    thread::spawn(|| {
+        let board = DigitalSignBoard {
+            display: display_data,
+        };
+
+        loop {
+            board.update();
+            thread::sleep(Duration::from_millis(200));
+        }
+    });
+}
