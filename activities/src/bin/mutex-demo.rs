@@ -41,4 +41,7 @@ fn main() {
 
     thread::sleep(Duration::from_millis(100));
     change_data(Arc::clone(&display_data), "message 1");
+
+    thread::sleep(Duration::from_millis(100));
+    change_data(Arc::clone(&display_data), "another message");
 }
