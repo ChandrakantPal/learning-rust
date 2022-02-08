@@ -4,3 +4,7 @@ use std::thread;
 use std::time::Duration;
 
 type SharedSignData = Arc<Mutex<String>>;
+
+struct DigitalSignBoard {
+    display: SharedSignData,
+}
