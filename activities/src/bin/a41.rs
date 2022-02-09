@@ -138,7 +138,7 @@ fn main() {
     let mut workers = vec![];
     // Spawn 4 workers to process jobs.
     for _ in 0..4 {
-        let worker = spawn_worker();
+        let worker = spawn_worker(Arc::clone(&job_counter));
         workers.push(worker);
     }
 
