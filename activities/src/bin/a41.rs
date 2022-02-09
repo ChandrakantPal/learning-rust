@@ -20,6 +20,7 @@
 use crossbeam_channel::{unbounded, Receiver, Sender};
 use parking_lot::Mutex;
 use std::collections::VecDeque;
+use std::sync::Arc;
 use std::thread::{self, JoinHandle};
 use std::time::Duration;
 
