@@ -18,6 +18,7 @@
 //   - parking_lot
 
 use crossbeam_channel::{unbounded, Receiver, Sender};
+use parking_lot::Mutex;
 use std::collections::VecDeque;
 use std::thread::{self, JoinHandle};
 use std::time::Duration;
@@ -166,5 +167,5 @@ fn main() {
     // print out the number of jobs completed here.
     let jobs_completed = job_counter.lock();
 
-    println!("Jobs completed: {}", jobs_completed)
+    println!("Jobs completed: {}", jobs_completed);
 }
