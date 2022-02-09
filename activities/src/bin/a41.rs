@@ -164,4 +164,7 @@ fn main() {
     println!("Jobs sent: {}", jobs_sent);
 
     // print out the number of jobs completed here.
+    let jobs_completed = job_counter.lock();
+
+    println!("Jobs completed: {}", jobs_completed)
 }
