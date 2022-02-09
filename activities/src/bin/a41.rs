@@ -78,6 +78,8 @@ fn spawn_worker(counter: Arc<Mutex<usize>>) -> Worker<Message> {
                         Job::Print(msg) => println!("{}", msg),
                         Job::Sum(lhs, rhs) => println!("{}+{}={}", lhs, rhs, lhs + rhs),
                     }
+                    let mut counter = counter.lock();
+                    *counter += 1;
                 }
                 // Check for messages on the channel.
                 if let Ok(msg) = rx_thread.try_recv() {
