@@ -18,3 +18,11 @@ impl IntoIterator for FruitStand {
         self.fruit.into_iter()
     }
 }
+
+impl<'a> IntoIterator for &'a FruitStand {
+    type Item = (&'a Fruit, &'a u32);
+    type IntoIter = std::collections::hash_map::Iter<'a, Fruit, u32>;
+    fn into_iter(self) -> Self::IntoIter {
+        self.fruit.iter()
+    }
+}
