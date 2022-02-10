@@ -44,13 +44,10 @@ fn main() {
     // removing mut
     let fruit = fruit;
 
-    let store = FruitStand { fruit };
+    let mut store = FruitStand { fruit };
 
-    for (fruit, stock) in &store {
-        println!("{:?}: {:?}", fruit, stock);
-    }
-
-    for (fruit, stock) in &store {
+    for (fruit, stock) in &mut store {
+        *stock += 10;
         println!("{:?}: {:?}", fruit, stock);
     }
 }
