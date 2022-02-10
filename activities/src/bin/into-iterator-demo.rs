@@ -6,3 +6,7 @@ enum Fruit {
     Banana,
     Orange,
 }
+
+struct FruitStand {
+    fruit: HashMap<Fruit, u32>,
+}
