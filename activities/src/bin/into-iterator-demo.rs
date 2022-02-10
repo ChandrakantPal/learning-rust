@@ -46,7 +46,11 @@ fn main() {
 
     let store = FruitStand { fruit };
 
-    for (fruit, stock) in store.into_iter() {
+    for (fruit, stock) in &store {
+        println!("{:?}: {:?}", fruit, stock);
+    }
+
+    for (fruit, stock) in &store {
         println!("{:?}: {:?}", fruit, stock);
     }
 }
