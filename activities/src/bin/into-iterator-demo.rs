@@ -34,3 +34,15 @@ impl<'a> IntoIterator for &'a mut FruitStand {
         self.fruit.iter_mut()
     }
 }
+
+fn main() {
+    let mut fruit = HashMap::new();
+    fruit.insert(Fruit::Banana, 5);
+    fruit.insert(Fruit::Apple, 2);
+    fruit.insert(Fruit::Orange, 6);
+
+    // removing mut
+    let fruit = fruit;
+
+    let store = FruitStand { fruit };
+}
