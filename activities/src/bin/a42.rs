@@ -47,4 +47,5 @@ fn main() {
     println!("{:?}", multiplier.next());
     println!("{:?}", multiplier.next());
     println!("{:?}", multiplier.next());
+    multiplier.per_iteration_bonus = 1;
 }
