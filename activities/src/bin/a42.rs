@@ -34,4 +34,12 @@ impl ScoreMultiplier {
     }
 }
 
+impl Iterator for ScoreMultiplier {
+    type Item = usize;
+    fn next(&mut self) -> Option<Self::Item> {
+        self.amount += self.per_iteration + self.per_iteration_bonus;
+        Some(self.amount)
+    }
+}
+
 fn main() {}
