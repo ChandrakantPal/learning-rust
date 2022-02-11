@@ -24,4 +24,14 @@ struct ScoreMultiplier {
     per_iteration_bonus: usize,
 }
 
+impl ScoreMultiplier {
+    fn new() -> Self {
+        Self {
+            amount: 0,
+            per_iteration: 1,
+            per_iteration_bonus: 0,
+        }
+    }
+}
+
 fn main() {}
