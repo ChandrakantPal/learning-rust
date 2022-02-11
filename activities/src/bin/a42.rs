@@ -44,4 +44,7 @@ impl Iterator for ScoreMultiplier {
 
 fn main() {
     let mut multiplier = ScoreMultiplier::new();
+    println!("{:?}", multiplier.next());
+    println!("{:?}", multiplier.next());
+    println!("{:?}", multiplier.next());
 }
