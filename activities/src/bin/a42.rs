@@ -42,4 +42,6 @@ impl Iterator for ScoreMultiplier {
     }
 }
 
-fn main() {}
+fn main() {
+    let mut multiplier = ScoreMultiplier::new();
+}
